@@ -27,6 +27,10 @@
     <%= f.label :tag_ids %>
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
   </div>
+  <div>
+    <%= f.label :photos %>
+    <%= f.file_field :photos, multiple: true, class: "form-control"  %>
+  </div>
   <hr>
   <br>
   <%= f.submit "Submit", class: "btn btn-primary col-sm-12" %>

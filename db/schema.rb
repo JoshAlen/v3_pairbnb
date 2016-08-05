@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805110822) do
+ActiveRecord::Schema.define(version: 20160805115645) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "uid"
@@ -45,18 +45,8 @@ ActiveRecord::Schema.define(version: 20160805110822) do
   add_index "listing_tags", ["listing_id"], name: "index_listing_tags_on_listing_id"
   add_index "listing_tags", ["tag_id"], name: "index_listing_tags_on_tag_id"
 
-  create_table "listings", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.text     "description"
-    t.integer  "max_guests"
-    t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "country_code"
-  end
-
-  add_index "listings", ["user_id"], name: "index_listings_on_user_id"
+# Could not dump table "listings" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
